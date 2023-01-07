@@ -1,9 +1,12 @@
 import React from 'react'
 import {cityname} from '../services/city-list.js'
 import {useNavigate,createSearchParams} from 'react-router-dom'
+import { useSelector } from 'react-redux'
 function Cityname() {
+  const state =useSelector(state=>state)
+  console.log(state,'teeest')
   const navigate = useNavigate()
-  const test = (id)=>{
+  const clickCityName = (id)=>{
     navigate(`/user/${id}`)
       
   }
@@ -19,7 +22,7 @@ function Cityname() {
   </thead>
   <tbody>
     {cityname.map(city=>
-     <tr onClick={()=>test(city.name)} className="list__city">
+     <tr onClick={()=>clickCityName(city.name)} className="list__city">
      <th scope="row">{city.id}</th>
      <td>{city.name}</td>
      <td>{city.country}</td>

@@ -8,7 +8,7 @@
     align-items: center;
     flex-direction: column;
     input{
-        width: 20%;
+        width: 40%;
     text-align: right;
     padding: 10px;
     border-radius: 7px;
@@ -41,4 +41,15 @@ right: 0;
 background: url('../../img/weather.avif') no-repeat center center/cover;
 z-index: -1;
 }
+}
+
+@media screen and(max-width:880px) {
+    .weather__main{
+  
+        &-location{
+            input{
+                width: 98%;
+            }
+        }
+    }
 }
